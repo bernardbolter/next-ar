@@ -1,10 +1,8 @@
 import { useState, useRef } from 'react'
-import { ARView, ARAnchor, useLoader} from 'react-three-mind'
-import { TextureLoader } from 'three/src/loaders/TextureLoader'
+import { ARView, ARAnchor } from 'react-three-mind'
 // import Target from './targets.mind'
 
 const Fiber = () => {
-    const city = useLoader(TextureLoader, './a1-america-city.jpg')
     const ref = useRef()
     const [showText, setShowText] = useState(false)
     const anchorFound = () => {
@@ -32,7 +30,7 @@ const Fiber = () => {
                 >
                 <mesh>
                     <boxGeometry args={[1, 1, 1]} />
-                    <meshStandardMaterial color="orange" map={city} />
+                    <meshStandardMaterial color="orange" />
                 </mesh>
                 </ARAnchor>
             </ARView>
