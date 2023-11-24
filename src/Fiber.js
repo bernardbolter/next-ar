@@ -34,7 +34,7 @@ const Fiber = () => {
                 >
                 <mesh>
                     <boxGeometry args={[.5, .5, 1]} />
-                    <meshStandardMaterial attach="material" color="orange" map={texture} />
+                    <meshStandardMaterial  color="orange" />
                 </mesh>
                 </ARAnchor>
             </ARView>
