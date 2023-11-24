@@ -16,8 +16,6 @@ export default () => {
         const material = new THREE.MeshBasicMaterial({color: 0x00ffff, transparent: true, opacity: 0.5})
         const plane = new THREE.Mesh( geometry, material )
         anchor.group.add(plane)
-        // renderer.setPixelRatio( window.devicePixelRatio )
-        // renderer.setSize( window.innerWidth, window.innerHeight )
 
         mindarThree.start()
         renderer.setAnimationLoop(() => {

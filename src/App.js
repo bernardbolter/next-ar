@@ -1,7 +1,8 @@
 import { useState } from 'react'
 
 import MindARViewer from './mindar-viewer'
-import MindARThreeViewer from './mindar-three-viewer';
+import MindARThreeViewer from './mindar-three-viewer'
+import Fiber from './Fiber'
 
 import './App.css';
 
@@ -15,6 +16,7 @@ function App() {
         <div className="control-buttons">
           {started === null && <button onClick={() => {setStarted('aframe')}}>Start AFRAME version</button>}
           {started === null && <button onClick={() => {setStarted('three')}}>Start ThreeJS version</button>}
+          {started === null && <button onClick={() => {setStarted('fiber')}}>Start Fiber version</button>}
           {started !== null && <button onClick={() => {setStarted(null)}}>Stop</button>}
         </div>
 
@@ -28,6 +30,12 @@ function App() {
         {started === 'three' && (
           <div className="container">
             <MindARThreeViewer />
+          </div>
+        )}
+
+        {started === 'fiber' && (
+          <div className="container">
+            <Fiber />
           </div>
         )}
     </div>
