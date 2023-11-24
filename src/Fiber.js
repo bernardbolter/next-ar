@@ -1,8 +1,10 @@
 import { useState, useRef } from 'react'
 import { ARView, ARAnchor } from 'react-three-mind'
 // import Target from './targets.mind'
+import { useTexture } from '@react-three/drei'
 
 const Fiber = () => {
+    const texture = useTexture('/a1-amercia-city.jpg')
     const ref = useRef()
     const [showText, setShowText] = useState(false)
     const anchorFound = () => {
@@ -30,12 +32,12 @@ const Fiber = () => {
                 >
                 <mesh>
                     <boxGeometry args={[1, 1, 1]} />
-                    <meshStandardMaterial color="orange" />
+                    <meshStandardMaterial color="orange" map={texture} />
                 </mesh>
                 </ARAnchor>
             </ARView>
             {showText && (
-                <h1>Test Text</h1>
+                <h1>Test Text 2</h1>
             )}
         </div>
     )
