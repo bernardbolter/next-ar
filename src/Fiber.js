@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import { ARAnchor, ARView } from "react-three-mind";
 
 function Plane(props) {
@@ -10,6 +11,8 @@ function Plane(props) {
 }
 
 function Fiber() {
+    const [showText, setShowText] = useState(false)
+
   return (
     <ARView
       imageTargets="/targets.mind"
@@ -21,9 +24,14 @@ function Fiber() {
         
       <ambientLight />
       <pointLight position={[10, 10, 10]} />
-      <ARAnchor target={0}>
+        <ARAnchor 
+            target={0}
+            onAnchorFound={() => setShowText(true)}
+            onAnchorLost={() => setShowText(false)}
+        >
         <Plane />
       </ARAnchor>
+      {showText && <p>TEXT</p>}
     </ARView>
   );
 }
