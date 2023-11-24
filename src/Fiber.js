@@ -3,7 +3,7 @@ import { ARAnchor, ARView } from "react-three-mind";
 function Plane(props) {
   return (
     <mesh {...props}>
-
+      <planeGeometry args={[1, 1]} />
       <meshStandardMaterial color="orange" />
     </mesh>
   );
@@ -18,7 +18,7 @@ function Fiber() {
       missTolerance={0}
       warmupTolerance={0}
     >
-
+        
       <ambientLight />
       <pointLight position={[10, 10, 10]} />
       <ARAnchor target={0}>
