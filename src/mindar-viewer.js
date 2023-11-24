@@ -6,6 +6,7 @@ export default () => {
     const sceneRef = useRef(null)
 
     useEffect(() => {
+        console.log(this)
         const sceneEl = sceneRef.current
         const arSystem = sceneEl.systems["mindar-image-system"]
         sceneEl.addEventListener('renderstart', () => {
