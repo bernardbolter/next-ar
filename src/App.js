@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import MindARViewer from './mindar-viewer'
-// import MindARThreeViewer from './mindar-three-viewer';
+import MindARThreeViewer from './mindar-three-viewer';
 
 import './App.css';
 
@@ -14,7 +14,7 @@ function App() {
 
         <div className="control-buttons">
           {started === null && <button onClick={() => {setStarted('aframe')}}>Start AFRAME version</button>}
-          {/* {started === null && <button onClick={() => {setStarted('three')}}>Start ThreeJS version</button>} */}
+          {started === null && <button onClick={() => {setStarted('three')}}>Start ThreeJS version</button>}
           {started !== null && <button onClick={() => {setStarted(null)}}>Stop</button>}
         </div>
 
@@ -25,11 +25,11 @@ function App() {
           </div>
         )}
 
-        {/* {started === 'three' && (
+        {started === 'three' && (
           <div className="container">
             <MindARThreeViewer />
           </div>
-        )} */}
+        )}
     </div>
   );
 }
