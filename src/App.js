@@ -1,8 +1,7 @@
 import { useState } from 'react'
 
-import MindARViewer from './mindar-viewer'
-import MindARThreeViewer from './mindar-three-viewer'
-import Fiber from './Fiber'
+import MegaAR from './mega-ar'
+import Frame from './frame'
 
 import './App.css';
 
@@ -11,33 +10,28 @@ function App() {
 
   return (
     <div className="App">
-        <h1>Mega AR Tester</h1>
+        <h1>Mega AR Tester 2</h1>
 
         <div className="control-buttons">
-          {/* {started === null && <button onClick={() => {setStarted('aframe')}}>Start AFRAME version</button>}
-          {started === null && <button onClick={() => {setStarted('three')}}>Start ThreeJS version</button>} */}
-          {started === null && <button onClick={() => {setStarted('fiber')}}>Start Fiber version</button>}
+          {started === null && <button onClick={() => {setStarted('three')}}>Starte Mega AR</button>}
+          {started === null && <button onClick={() => {setStarted('frame')}}>Start AFRAME AR</button>}
           {started !== null && <button onClick={() => {setStarted(null)}}>Stop</button>}
         </div>
 
-        {/* {started === 'aframe' && (
+
+        {started === 'three' && (
           <div className="container">
-            <MindARViewer/>
+            <MegaAR />
+          </div>
+        )}
+
+        {started === 'frame' && (
+          <div className="container">
+            <Frame />
             <video></video>
           </div>
         )}
 
-        {started === 'three' && (
-          <div className="container">
-            <MindARThreeViewer />
-          </div>
-        )} */}
-
-        {started === 'fiber' && (
-          <div className="container">
-            <Fiber />
-          </div>
-        )}
     </div>
   );
 }
