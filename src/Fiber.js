@@ -7,7 +7,7 @@ const Fiber = () => {
     return (
         <div className="fiber-container">
             <ARView
-                imageTargets="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/examples/image-tracking/assets/card-example/card.mind"
+                imageTargets="./targets.mind"
                 filterMinCF={1}
                 filterBeta={10000}
                 missTolerance={0}
