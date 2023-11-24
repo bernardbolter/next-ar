@@ -3,7 +3,7 @@ import { ARAnchor, ARView } from "react-three-mind";
 
 function Plane(props) {
   return (
-    <mesh {...props}>
+    <mesh {...props} position={[0,0,0]}>
       <planeGeometry args={[1, 1]} />
       <meshStandardMaterial color="orange" />
     </mesh>
@@ -14,6 +14,7 @@ function Fiber() {
     const [showText, setShowText] = useState(false)
 
   return (
+    <>
     <ARView
       imageTargets="/targets.mind"
       filterMinCF={1}
@@ -31,8 +32,9 @@ function Fiber() {
         >
         <Plane />
       </ARAnchor>
-      {showText && <p>TEXT</p>}
     </ARView>
+    {showText && <p>TEXT</p>}
+    </>
   );
 }
 
