@@ -14,13 +14,13 @@ function App() {
         <h1>Mega AR Tester</h1>
 
         <div className="control-buttons">
-          {started === null && <button onClick={() => {setStarted('aframe')}}>Start AFRAME version</button>}
-          {started === null && <button onClick={() => {setStarted('three')}}>Start ThreeJS version</button>}
+          {/* {started === null && <button onClick={() => {setStarted('aframe')}}>Start AFRAME version</button>}
+          {started === null && <button onClick={() => {setStarted('three')}}>Start ThreeJS version</button>} */}
           {started === null && <button onClick={() => {setStarted('fiber')}}>Start Fiber version</button>}
           {started !== null && <button onClick={() => {setStarted(null)}}>Stop</button>}
         </div>
 
-        {started === 'aframe' && (
+        {/* {started === 'aframe' && (
           <div className="container">
             <MindARViewer/>
             <video></video>
@@ -31,7 +31,7 @@ function App() {
           <div className="container">
             <MindARThreeViewer />
           </div>
-        )}
+        )} */}
 
         {started === 'fiber' && (
           <div className="container">
