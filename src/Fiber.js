@@ -1,10 +1,12 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, Suspense } from 'react'
 import { ARView, ARAnchor } from 'react-three-mind'
 // import Target from './targets.mind'
-import { useTexture } from '@react-three/drei'
+// import { useTexture } from '@react-three/drei'
+// import * as THREE from 'three'
+// import { useLoader } from 'react-three-fiber'
 
 const Fiber = () => {
-    const texture = useTexture('/a1-amercia-city.jpg')
+    // const texture = useLoader(THREE.TextureLoader, '/a1-amercia-city.jpg')
     const ref = useRef()
     const [showText, setShowText] = useState(false)
     const anchorFound = () => {
@@ -24,15 +26,15 @@ const Fiber = () => {
                 warmupTolerance={0}
             >
                 <ambientLight />
-                <pointLight position={[10, 10, 10]} />
+                <pointLight position={[1, 1, 1]} />
                 <ARAnchor 
                     target={0}
                     onAnchorFound={() => anchorFound()}
                     onAnchorLost={() => anchorLost()}
                 >
                 <mesh>
-                    <boxGeometry args={[1, 1, 1]} />
-                    <meshStandardMaterial color="orange" map={texture} />
+                    <boxGeometry args={[.5, .5, 1]} />
+                    <meshStandardMaterial attach="material" color="orange" map={texture} />
                 </mesh>
                 </ARAnchor>
             </ARView>
