@@ -20,7 +20,7 @@ const MegaAR = ({ currentButton }) => {
               const geometry = new THREE.PlaneGeometry(1, 1.55);
               const germanTexture = new THREE.TextureLoader().load('./a1-deutsche-stade.jpg')
               const americaTexture = new THREE.TextureLoader().load('./a1-america-city.jpg')
-              if (currentButton === 'berlin') {
+              if (currentButton === false) {
                 material = new THREE.MeshBasicMaterial( {map: americaTexture, transparent: true, opacity: 0.5} )
               } else {
                 material = new THREE.MeshBasicMaterial( {map: germanTexture, transparent: true, opacity: 0.5} )
