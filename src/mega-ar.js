@@ -16,17 +16,18 @@ const images = [
 
 const MegaAR = ({ currentButton }) => {
     const containerRef = useRef(null)
-    const [material, setMaterial] = useState(new THREE.MeshBasicMaterial( {transparent: true, opacity: 0.5} ) )
     const germanTexture = new THREE.TextureLoader().load('./a1-deutsche-stadt.jpg')
     const americaTexture = new THREE.TextureLoader().load('./a1-america-city.jpg')
+    const [material, setMaterial] = useState(new THREE.MeshBasicMaterial( {map: americaTexture, transparent: true, opacity: 1} ) )
+    
     // const material = new THREE.MeshBasicMaterial( {map: americaTexture, transparent: true, opacity: 0.5} )
     
     
 
-    useEffect(() => {
-      setMaterial(state => ({ ...state, map: americaTexture }) )
-    }, [])
-    console.log(material)
+    // useEffect(() => {
+    //   setMaterial(state => ({ ...state, map: americaTexture }) )
+    // }, [])
+    // console.log(material)
     // let mindarThree = useRef(null)
     // let mindarThree
 
