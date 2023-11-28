@@ -121,17 +121,17 @@ const MegaAR = ({ currentButton }) => {
                 console.log("fourth: ",mindarThree)
               }
   
-      }, [currentButton]);
+      }, []);
 
-      useEffect(() => {
-        console.log("MT: ", material)
-        console.log(currentButton)
-        if (currentButton === true) {
-          setMaterial(state => ({ ...state, map: germanTexture }))
-        } else {
-          setMaterial(state => ({ ...state, map: americaTexture }))
-        }
-      }, [currentButton])
+      // useEffect(() => {
+      //   console.log("MT: ", material)
+      //   console.log(currentButton)
+      //   if (currentButton === true) {
+      //     setMaterial(state => ({ ...state, map: germanTexture }))
+      //   } else {
+      //     setMaterial(state => ({ ...state, map: americaTexture }))
+      //   }
+      // }, [currentButton])
 
 
     return (
